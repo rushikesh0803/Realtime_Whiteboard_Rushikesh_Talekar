@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide TLDraw color/style sections when overlays are open */
+.hide-colors .tlui-style-panel,
+.hide-colors [data-testid="style-panel"],
+.hide-colors .tlui-toolbar__style-toggle,
+.hide-colors .tlui-style-panel__swatches,
+body.overlay-open .tlui-style-panel,
+body.overlay-open [data-testid="style-panel"],
+body.overlay-open .tlui-toolbar__style-toggle,
+body.overlay-open .tlui-style-panel__swatches {
+  display: none !important;
+}
+
+
+
+/* ---- Custom UI primitives ---- */
+.input {
+  @apply border rounded px-3 py-2 bg-white/70 dark:bg-zinc-900/70 outline-none focus:ring-2 ring-indigo-500;
+}
+
+.btn {
+  @apply px-3 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700;
+}
+
+.btn-outline {
+  @apply px-3 py-2 rounded border border-indigo-600 text-indigo-600 hover:bg-indigo-50;
+}
+
+/* ---- Hide tldraw color/style panel when chat or voice is open ---- */
+body.overlay-open .tlui-style-panel {
+  display: none !important;
+}
+
+/* (Optional alternative)
+   If you want to hide only the color subsection instead of the full panel, 
+   comment out the rule above and use this one instead:
+
+body.overlay-open .tlui-style-panel .tlui-style-panel__section[data-id="color"] {
+  display: none !important;
+}
+*/
+
+
+#boot-loader {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+#boot-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+#boot-loader img {
+  width: 300px;
+  height: auto;
+  max-width: 90vw;
+}
+

@@ -1,4 +1,4 @@
-# Realtime Collaborative Whiteboard
+# Realtime Collaborative Whiteboard (JS + MongoDB)
 - React + Vite + Tailwind + tldraw
 - Express + Socket.IO + MongoDB (Mongoose), JWT cookies (email/password)
 - Floating FAB (bottom-right): Chat 💬 / Share 🔗 / Voice 🎙️
